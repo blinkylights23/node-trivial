@@ -15,7 +15,3 @@ module.exports = {
   },
   categories: new Set(trivia.map(i => { return { id: i.category_id, title: i.category.title } }))
 }
-
-function whatevs() {
-  return ':shruggie:';
-}
