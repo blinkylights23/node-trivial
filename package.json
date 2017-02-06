@@ -1,5 +1,5 @@
 {
-  "name": "node-trivial",
+  "name": "@paulsmith/node-trivial",
   "version": "1.0.0",
   "description": "Jeopardy-like trivia",
   "main": "index.js",
