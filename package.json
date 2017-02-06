@@ -1,0 +1,19 @@
+{
+  "name": "node-trivial",
+  "version": "1.0.0",
+  "description": "Jeopardy-like trivia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkylights23/node-trivial.git"
+  },
+  "author": "Paul Smith <paul@paulsmith.io> (http://paulsmith.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blinkylights23/node-trivial/issues"
+  },
+  "homepage": "https://github.com/blinkylights23/node-trivial#readme"
+}
