@@ -1,14 +1,16 @@
 {
   "name": "@paulsmith/node-trivial",
-  "version": "1.1.0",
+  "version": "0.0.0-development",
   "description": "Jeopardy-like trivia",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/index.js -w"
+    "commit": "git-cz",
+    "test": "mocha tests/index.js -w",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blinkylights23/node-trivial.git"
+    "url": "https://github.com/blinkylights23/node-trivial.git"
   },
   "author": "Paul Smith <paul@paulsmith.io> (http://paulsmith.io/)",
   "license": "MIT",
@@ -18,6 +20,12 @@
   "homepage": "https://github.com/blinkylights23/node-trivial#readme",
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "3.2.0"
+    "commitizen": "2.9.5",
+    "cz-conventional-changelog": "1.2.0",
+    "mocha": "3.2.0",
+    "semantic-release": "^6.3.2"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
