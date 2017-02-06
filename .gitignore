@@ -1,5 +1,6 @@
 *~
 .vscode
+dist
 
 # Logs
 logs
@@ -10,6 +11,7 @@ npm-debug.log*
 node_modules
 jspm_packages
 coverage
+.nyc_output
 
 # Optional npm cache directory
 .npm

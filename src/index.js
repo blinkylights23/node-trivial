@@ -1,5 +1,4 @@
-const trivia = require('./trivia');
-
+import trivia from './trivia';
 
 module.exports = {
   all: trivia,

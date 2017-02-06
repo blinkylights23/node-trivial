@@ -2,14 +2,22 @@
   "name": "@paulsmith/node-trivial",
   "version": "0.0.0-development",
   "description": "Jeopardy-like trivia",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel --copy-files --out-dir dist src",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "test": "mocha tests/index.js -w",
-    "test-ci": "istanbul cover -x test/* _mocha -- -R spec tests/index.js",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "cover": "nyc npm t",
+    "test": "mocha --require babel-register --compilers js:babel-register tests/index.js",
+    "test:watch": "npm t -- -w",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/blinkylights23/node-trivial.git"
@@ -21,23 +29,40 @@
   },
   "homepage": "https://github.com/blinkylights23/node-trivial#readme",
   "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-stage-2": "6.22.0",
+    "babel-register": "6.22.0",
     "chai": "3.5.0",
     "commitizen": "2.9.5",
     "cz-conventional-changelog": "1.2.0",
     "ghooks": "2.0.0",
-    "istanbul": "0.4.5",
     "mocha": "3.2.0",
+    "nyc": "10.1.2",
+    "rimraf": "2.5.4",
     "semantic-release": "^6.3.2"
   },
   "engines": {
     "node": ">=6.0.0"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
   "config": {
+    "babel": {
+      "presets": [
+        "es2015",
+        "stage-2"
+      ]
+    },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm run test-ci && npm run check-coverage"
+      "pre-commit": "npm run cover && npm run check-coverage"
     }
   }
 }

@@ -1,7 +1,5 @@
-var trivial = require('../src');
-
-var expect = require('chai').expect;
-
+import trivial from '../src';
+import { expect } from 'chai';
 
 describe('Trivia module tests', () => {
   describe('all method', () => {
