@@ -12,8 +12,14 @@ describe('Trivia module tests', () => {
   });
 
   describe('random method', () => {
-    it('should return a random question', () => {
+    it('should return a random question when no arg passed', () => {
       expect(trivial.random()).to.be.an('object');
+    })
+    it('should return a random question from the given category', () => {
+      expect(trivial.random('australia')).to.be.an('object')
+        .and.to.have.property('category_id', 5);
+      expect(trivial.random(4)).to.be.an('object')
+        .and.to.have.deep.property('category.title', 'movies');
     })
   });
 
